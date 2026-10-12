@@ -1,16 +1,21 @@
-# Planriva — public project website
+# Planriva
 
-Public-safe, single-file landing page for Planriva. No proprietary application code, client BIM files or private validation data.
+**Better BIM decisions. Less blind work.**
 
-## Publish for free
-1. Create a **public** GitHub repository named `planriva-site`.
-2. Upload `index.html` at repository root.
-3. Open **Settings → Pages → Build and deployment → Deploy from a branch**.
-4. Select `main` and `/(root)`, then Save.
-5. Wait for the Pages deployment and verify `https://dokarpov.github.io/planriva-site/` before using it in ConTech.
+Planriva is an early-stage product exploring more reliable, reviewable workflows for architectural teams working with BIM.
 
-## Claims policy
-This is an early-stage technical validation project. Illustrations are conceptual. Do not imply live BIM integration, deployed software or customer metrics.
+**Website:** https://dokarpov.github.io/planriva-site/
 
-## Privacy
-Keep `planriva-app` and `planriva-private-validation` private. Only publish this website.
+The public website is hosted from `index.html` using GitHub Pages. It presents the product direction and early validation status; it is not a production application.
+
+## Project status
+
+Early technical validation. No production deployment, verified customer metrics, or commercial traction is claimed.
+
+## Contact
+
+[Email the founder](mailto:dokarpov@gmail.com)
+
+## Intellectual property
+
+This repository contains only public-facing website assets. Application code, private experiments, and potentially patent-sensitive implementation details are maintained separately in private repositories.
