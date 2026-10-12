@@ -16,7 +16,7 @@ Public-facing concept website for Planriva, an early-stage Archicad-first explor
 
 ## Current limitations
 
-The published website uses original **synthetic SVG illustrations**. High-detail photorealistic image concepts generated during visual exploration are **not yet integrated into this repository**. The comparison uses conceptual illustrations rather than two matched CAD exports, and should not be interpreted as an actual technical diff.
+The published website uses original **synthetic SVG illustrations**. High-detail photorealistic image concepts generated during visual exploration are **not yet integrated into this repository**. The comparison uses the same synthetic floor plan in both layers, with illustrative colored revision highlights to preserve alignment. It is not an actual technical diff.
 
 ## Product status
 
