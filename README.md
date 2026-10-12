@@ -1,21 +1,25 @@
 # Planriva
 
-**Better BIM decisions. Less blind work.**
+**Architecture, with clarity.**
 
-Planriva is an early-stage product exploring more reliable, reviewable workflows for architectural teams working with BIM.
+Planriva explores an Archicad-first approach to reviewable architectural documentation workflows: source context, proposed changes, human approval and traceability.
 
-**Website:** https://dokarpov.github.io/planriva-site/
+**Public website:** https://dokarpov.github.io/planriva-site/
 
-The public website is hosted from `index.html` using GitHub Pages. It presents the product direction and early validation status; it is not a production application.
+## Website
 
-## Project status
+Responsive, static GitHub Pages experience with English, Spanish and Catalan interfaces. Four original SVG architectural illustrations use synthetic data only. Language choice persists in the browser; direct language links also work using `?lang=en`, `?lang=es` or `?lang=ca`.
 
-Early technical validation. No production deployment, verified customer metrics, or commercial traction is claimed.
+The interface supports keyboard navigation, visible focus and reduced-motion preferences. No backend or tracking is required.
 
-## Contact
+## Status and claims
 
-[Email the founder](mailto:dokarpov@gmail.com)
+Planriva is in early technical validation. Website visuals communicate product direction and illustrative workflows; they do not demonstrate live BIM generation or verified performance improvements. No client data is used.
 
 ## Intellectual property
 
-This repository contains only public-facing website assets. Application code, private experiments, and potentially patent-sensitive implementation details are maintained separately in private repositories.
+This repository contains public presentation assets only. Application source code, research, validation evidence and potentially patent-sensitive methods remain in private repositories.
+
+## Contact
+
+[Contact the founder](mailto:dokarpov@gmail.com)
