@@ -2,30 +2,28 @@
 
 **Architecture, with clarity.**
 
-Public-facing concept website for Planriva, an early-stage Archicad-first exploration of reviewable architectural documentation workflows.
+A public concept site for Planriva, exploring an Archicad-first, human-reviewed approach to architectural documentation.
 
-**Website:** https://dokarpov.github.io/planriva-site/
+**Live website:** https://dokarpov.github.io/planriva-site/
 
 ## Experience
 
-- Minimal editorial layout with architectural illustration cards (no image backgrounds)
-- Interactive before/after revision comparison with a draggable range control
-- English, Spanish and Catalan; direct language links: `?lang=en`, `?lang=es`, `?lang=ca`
-- Responsive styling, visible keyboard focus and reduced-motion support
-- Static HTML, CSS and JavaScript; no application backend
+- Editorial, image-led presentation with no decorative image backgrounds
+- Responsive layouts for narrow phones, tablets and desktop
+- Existing typography preserved: Manrope, DM Sans and IBM Plex Mono
+- Interactive revision comparison: the same synthetic plan is used in both layers, with illustrative colored revision marks
+- English, Spanish and Catalan translation dictionaries, with language switcher and `?lang=en|es|ca`
+- Keyboard-accessible slider, visible focus and reduced-motion rules
+- Static HTML/CSS/JS, no application backend or analytics
 
-## Current limitations
+## Project status and limits
 
-The published website uses original **synthetic SVG illustrations**. High-detail photorealistic image concepts generated during visual exploration are **not yet integrated into this repository**. The comparison uses the same synthetic floor plan in both layers, with illustrative colored revision highlights to preserve alignment. It is not an actual technical diff.
+**Early technical validation.** Site visuals are synthetic concepts, not evidence of live BIM generation, customer adoption or measured performance. No client BIM files or proprietary application implementation are included.
 
-## Product status
+**Asset limitation:** The published site still uses original SVG illustrations. High-detail renders produced during exploration are not integrated into the public repository yet. The revision slider is illustrative, not an engineering diff.
 
-Early technical validation and workflow research. Illustrations describe the intended product direction, not production-ready BIM generation, verified performance gains, or paying customers. No identifiable client files are published.
-
-## IP
-
-This repository contains public presentation assets only. Proprietary application code and validation evidence remain private.
+**QA limitation:** Source checks and live URL availability checks are not substitutes for complete visual testing on physical devices. Responsive rules have been implemented, but exhaustive cross-device visual QA remains open.
 
 ## Contact
 
-[Email](mailto:dokarpov@gmail.com)
+[Email the founder](mailto:dokarpov@gmail.com)
