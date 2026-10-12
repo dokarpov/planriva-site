@@ -2,24 +2,30 @@
 
 **Architecture, with clarity.**
 
-Planriva explores an Archicad-first approach to reviewable architectural documentation workflows: source context, proposed changes, human approval and traceability.
+Public-facing concept website for Planriva, an early-stage Archicad-first exploration of reviewable architectural documentation workflows.
 
-**Public website:** https://dokarpov.github.io/planriva-site/
+**Website:** https://dokarpov.github.io/planriva-site/
 
-## Website
+## Experience
 
-Responsive, static GitHub Pages experience with English, Spanish and Catalan interfaces. Four original SVG architectural illustrations use synthetic data only. Language choice persists in the browser; direct language links also work using `?lang=en`, `?lang=es` or `?lang=ca`.
+- Minimal editorial layout with architectural illustration cards (no image backgrounds)
+- Interactive before/after revision comparison with a draggable range control
+- English, Spanish and Catalan; direct language links: `?lang=en`, `?lang=es`, `?lang=ca`
+- Responsive styling, visible keyboard focus and reduced-motion support
+- Static HTML, CSS and JavaScript; no application backend
 
-The interface supports keyboard navigation, visible focus and reduced-motion preferences. No backend or tracking is required.
+## Current limitations
 
-## Status and claims
+The published website uses original **synthetic SVG illustrations**. High-detail photorealistic image concepts generated during visual exploration are **not yet integrated into this repository**. The comparison uses conceptual illustrations rather than two matched CAD exports, and should not be interpreted as an actual technical diff.
 
-Planriva is in early technical validation. Website visuals communicate product direction and illustrative workflows; they do not demonstrate live BIM generation or verified performance improvements. No client data is used.
+## Product status
 
-## Intellectual property
+Early technical validation and workflow research. Illustrations describe the intended product direction, not production-ready BIM generation, verified performance gains, or paying customers. No identifiable client files are published.
 
-This repository contains public presentation assets only. Application source code, research, validation evidence and potentially patent-sensitive methods remain in private repositories.
+## IP
+
+This repository contains public presentation assets only. Proprietary application code and validation evidence remain private.
 
 ## Contact
 
-[Contact the founder](mailto:dokarpov@gmail.com)
+[Email](mailto:dokarpov@gmail.com)
