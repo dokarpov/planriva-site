@@ -1,0 +1,52 @@
+name: Build Planriva nested preview
+on:
+  workflow_dispatch:
+  push:
+    branches: [rebuild/react-v2]
+    paths:
+      - 'preview-v2/**'
+permissions:
+  contents: write
+concurrency:
+  group: planriva-nested-preview
+  cancel-in-progress: false
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout development source
+        uses: actions/checkout@v4
+        with:
+          ref: rebuild/react-v2
+          path: source
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build real React site for nested URL
+        working-directory: source/preview-v2
+        run: |
+          npm install
+          npm run build -- --base=/planriva-site/preview/
+          test -s dist/index.html
+          test -n "$(find dist/assets -type f -name '*.js' -print -quit)"
+      - name: Checkout public site (do not modify root)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: public
+          persist-credentials: true
+      - name: Publish preview folder only
+        run: |
+          rm -rf public/preview
+          mkdir -p public/preview
+          cp -a source/preview-v2/dist/. public/preview/
+          printf 'User-agent: *\nDisallow: /planriva-site/preview/\n' > public/preview/robots.txt
+          cd public
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- preview
+          if ! git diff --cached --quiet; then
+            git commit -m "Deploy unapproved Planriva React build to nested preview only"
+            git push origin HEAD:main
+          fi
