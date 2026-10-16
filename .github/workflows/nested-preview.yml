@@ -37,6 +37,13 @@ jobs:
       - name: Validate desktop and mobile preview
         working-directory: source/preview-v2
         run: npm run test:smoke
+      - name: Save browser review evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: planriva-preview-browser-evidence
+          path: source/preview-v2/test-results/
+          retention-days: 14
       - name: Checkout public site (do not modify root)
         uses: actions/checkout@v4
         with:
