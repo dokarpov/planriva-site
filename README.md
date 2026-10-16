@@ -2,28 +2,27 @@
 
 **Architecture, with clarity.**
 
-A public concept site for Planriva, exploring an Archicad-first, human-reviewed approach to architectural documentation.
+Planriva explores an Archicad-first workflow for keeping drawings, model context, discrepancies, and human decisions connected. The aim is to make architectural documentation more reviewable, not to automate professional approval.
 
-**Live website:** https://dokarpov.github.io/planriva-site/
+**[Public concept website](https://dokarpov.github.io/planriva-site/)**
 
-## Experience
+## What you can explore
 
-- Editorial, image-led presentation with no decorative image backgrounds
-- Responsive layouts for narrow phones, tablets and desktop
-- Existing typography preserved: Manrope, DM Sans and IBM Plex Mono
-- Interactive revision comparison: the same synthetic plan is used in both layers, with illustrative colored revision marks
-- English, Spanish and Catalan translation dictionaries, with language switcher and `?lang=en|es|ca`
-- Keyboard-accessible slider, visible focus and reduced-motion rules
-- Static HTML/CSS/JS, no application backend or analytics
+The published website demonstrates an illustrative revision comparison and multilingual editorial experience (English, Spanish, Catalan). The diagrams and example records use synthetic data.
 
-## Project status and limits
+A separate React product-experience rebuild is being validated on the `rebuild/react-v2` branch. Its intended [preview URL](https://dokarpov.github.io/planriva-site/preview/) is **not a production release**; availability and browser QA must be confirmed before it is described as working.
 
-**Early technical validation.** Site visuals are synthetic concepts, not evidence of live BIM generation, customer adoption or measured performance. No client BIM files or proprietary application implementation are included.
+## Product principles
 
-**Asset limitation:** The published site still uses original SVG illustrations. High-detail renders produced during exploration are not integrated into the public repository yet. The revision slider is illustrative, not an engineering diff.
+- **Traceable context:** a proposed issue should link to the source material behind it.
+- **Human decision authority:** an architect reviews and approves consequential changes.
+- **Explicit uncertainty:** demonstrations must distinguish detected differences from verified engineering conclusions.
+- **Private project data:** the public site contains no customer BIM files.
 
-**QA limitation:** Source checks and live URL availability checks are not substitutes for complete visual testing on physical devices. Responsive rules have been implemented, but exhaustive cross-device visual QA remains open.
+## Stage
 
-## Contact
+**Concept demonstration / early technical validation.** This repository does not establish a production BIM integration, verified accuracy, paying customers, or customer adoption. The revision comparison is illustrative, not an engineering diff.
 
-[Email the founder](mailto:dokarpov@gmail.com)
+## Collaboration
+
+For research conversations, architectural workflow feedback, or pilot interest: [contact](mailto:dokarpov@gmail.com).
