@@ -35,3 +35,19 @@
 .hotspotA{top:42%;left:48%}.hotspotB{top:59%;left:20%}
 .sceneHotspot{z-index:4}
 @media(max-width:600px){.bimModel{width:150%;left:-25%;height:82%;top:6%}.hotspotA{top:32%;left:46%}.hotspotB{top:48%;left:7%}}
+
+/* Restrained architectural editorial system: monochrome, warm paper, one accent. */
+:root{--paper:#f8f7f3;--ink:#222824;--muted:#6b706c;--line:#deded8;--lime:#e7e8e0;--orange:#525e55}
+body{background:var(--paper);color:var(--ink)}
+.logo span,.period,.workLogo span{color:var(--ink)}
+.signal,.liveDot{background:var(--ink)!important}
+.primary:hover{background:#dfe3dc;color:var(--ink)}
+.navbutton,.primary,.reviewButton{border-radius:0}
+.heroV46Scene{background:#e8eae5}
+.bimModel{filter:drop-shadow(0 20px 18px #29352c15)}
+.heroV46SceneWash{background:none}
+.hotspotRing{box-shadow:0 0 0 5px #f8f7f388}
+.hotspotLabel,.sceneInfo,.closingCard,.detailField{box-shadow:none}
+.reviewFlag{color:var(--ink)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
