@@ -51,3 +51,50 @@ body{background:var(--paper);color:var(--ink)}
 .reviewFlag{color:var(--ink)}
 a:focus-visible,button:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* Planriva visual direction: quiet architectural editorial, no decorative color blocks. */
+:root{--paper:#ffffff;--ink:#1e2521;--muted:#656d68;--line:#e2e5e0;--lime:#f1f3ef;--orange:#4b5950}
+html,body{background:#fff;color:#1e2521}
+.nav{background:#fff;border-color:#e2e5e0}
+.logo span,.heroV46Headline h1 span,.period,.workLogo span{color:inherit}
+.heroV46{background:#fff}
+.heroV46Top{padding-top:58px;padding-bottom:65px}
+.heroV46Headline h1{font-size:clamp(54px,8vw,122px);letter-spacing:-.08em;line-height:1.02}
+.heroV46Headline p{color:#58615b}
+.heroV46Overline,.heroV46Side,.heroV46Serial{color:#6a716c}
+.liveDot{display:none}
+.heroV46Scene{background:#f0f2ee;min-height:580px}
+.heroV46SceneWash{display:none}
+.bimModel{filter:drop-shadow(0 18px 14px #28332a16)}
+.sceneHotspot .hotspotRing{background:#fff;border:1px solid #58675b;box-shadow:none}
+.sceneHotspot .hotspotLabel{background:#fff;color:#1e2521;border:1px solid #e2e5e0;box-shadow:none}
+.sceneInfo{background:#fff;color:#1e2521;border:1px solid #e2e5e0;box-shadow:none}
+.sceneStatus,.reviewFlag{color:#1e2521}
+.manifesto{background:#fff;color:#1e2521;padding:115px 0}
+.manifesto h2 span{color:#858e86}
+.problemGrid article{border-color:#e2e5e0}
+.process{padding-top:120px;padding-bottom:130px}
+.processRows article{border-color:#e2e5e0}
+.processRows .arrow{display:none}
+.architecturalInterlude{background:#f5f6f3}
+.interludeText{background:#f5f6f3;color:#1e2521}
+.interludeTag{background:#fff;color:#1e2521}
+.productSection{background:#fff;padding:115px 0 135px}
+.productIntro>p{color:#58615b}
+.workspace{border:1px solid #d7ddd6;box-shadow:none;background:#fff}
+.workHeader,.workSide,.workCanvas,.workDetail{background:#fff}
+.canvasDrawing{background:#fafbf9}
+.closingCard{background:#f3f5f1;padding:70px}
+.closing h2 em{color:#4c5c51}
+.primary,.navbutton,.reviewButton{background:#26332b;color:#fff;box-shadow:none}
+.primary:hover,.navbutton:hover,.reviewButton:hover{background:#46574a;color:#fff}
+.footer{border-color:#e2e5e0}
+@media(max-width:700px){
+ .heroV46Top{padding-top:35px;padding-bottom:35px}
+ .heroV46Headline h1{font-size:clamp(48px,11vw,72px)}
+ .heroV46Scene{min-height:500px}
+ .manifesto,.productSection{padding-top:75px;padding-bottom:85px}
+ .closingCard{padding:35px 24px}
+ .architecturalInterlude{display:block}
+ .interludePhoto{min-height:350px}
+}
