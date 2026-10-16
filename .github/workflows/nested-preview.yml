@@ -31,6 +31,12 @@ jobs:
           test -s dist/index.html
           ! grep -q 'src="/v45.jsx"' dist/index.html
           test -n "$(find dist/assets -type f -name '*.js' -print -quit)"
+      - name: Install browser for acceptance tests
+        working-directory: source/preview-v2
+        run: npx playwright install --with-deps chromium
+      - name: Validate desktop and mobile preview
+        working-directory: source/preview-v2
+        run: npm run test:smoke
       - name: Checkout public site (do not modify root)
         uses: actions/checkout@v4
         with:
