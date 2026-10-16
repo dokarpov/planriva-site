@@ -26,10 +26,24 @@ jobs:
       - name: Build real React site for nested URL
         working-directory: source/preview-v2
         run: |
-          npm install
+          npm install --no-audit --no-fund
           npm run build -- --base=/planriva-site/preview/
           test -s dist/index.html
+          ! grep -q 'src="/v45.jsx"' dist/index.html
           test -n "$(find dist/assets -type f -name '*.js' -print -quit)"
+      - name: Install browser for acceptance tests
+        working-directory: source/preview-v2
+        run: npx playwright install --with-deps chromium
+      - name: Validate desktop and mobile preview
+        working-directory: source/preview-v2
+        run: npm run test:smoke
+      - name: Save browser review evidence
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: planriva-preview-browser-evidence
+          path: source/preview-v2/test-results/
+          retention-days: 14
       - name: Checkout public site (do not modify root)
         uses: actions/checkout@v4
         with:
@@ -47,6 +61,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -- preview
           if ! git diff --cached --quiet; then
-            git commit -m "Deploy unapproved Planriva React build to nested preview only"
+            git commit -m "Publish Planriva review preview"
             git push origin HEAD:main
           fi
