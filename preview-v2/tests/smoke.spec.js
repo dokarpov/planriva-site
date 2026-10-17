@@ -22,6 +22,17 @@ test('published React preview candidate: navigation, evidence review, contrast, 
  await expect(page).toHaveURL(/#review$/);
  await page.getByRole('button',{name:'Review partition alignment issue'}).click();
  await expect(page.getByRole('tab',{name:/Issue/})).toHaveAttribute('aria-selected','true');
+ // Mobile-first acceptance: the selected outcome must be visible directly below the stage controls,
+ // without scrolling past a large drawing after each action.
+ if(testInfo.project.name!=='desktop'){
+  await expect(page.locator('#referenceDrawing')).toBeHidden();
+  const title=page.locator('.reviewPanel h3');
+  await expect(title).toContainText('Understand the discrepancy.');
+  await expect(title).toBeInViewport({ratio:0.85});
+  const tabs=await page.locator('.appSteps').boundingBox(), result=await title.boundingBox();
+  expect(result.y-(tabs.y+tabs.height),'Result must immediately follow stage selector').toBeLessThan(125);
+ }
+
  await page.getByRole('tab',{name:/Source/}).click();
  await expect(page.getByRole('tabpanel')).toContainText('First, find what changed.');
  await page.getByRole('button',{name:'Open the issue'}).click();
@@ -35,6 +46,16 @@ test('published React preview candidate: navigation, evidence review, contrast, 
  await page.getByRole('button',{name:'Restart review'}).click();
  await expect(page.getByRole('tabpanel')).toContainText('First, find what changed.');
  expect(await page.getByRole('status').count()).toBe(0);
+ if(testInfo.project.name!=='desktop'){
+  await expect(page.locator('#referenceDrawing')).toBeHidden();
+  const reveal=page.getByRole('button',{name:'View referenced drawing'});
+  await expect(reveal).toHaveAttribute('aria-expanded','false');
+  await reveal.click();
+  await expect(page.locator('#referenceDrawing')).toBeVisible();
+  await expect(page.getByRole('button',{name:'Hide referenced drawing'})).toHaveAttribute('aria-expanded','true');
+ }else{
+  await expect(page.locator('#referenceDrawing')).toBeVisible();
+ }
  const contrast=await page.evaluate(()=>{
   function color(str){const match=str.match(/rgba?\(([^)]+)\)/);if(!match)return null;return match[1].split(',').slice(0,3).map(Number)}
   function linear(x){x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}
