@@ -256,4 +256,29 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display)}
  .markerText small{font-size:11px}
 }
 
+
+/* Outcome-first mobile review: a stage change updates its result in the same viewport.
+   The large plan becomes secondary supporting evidence, not a barrier to feedback. */
+#reviewApp{scroll-margin-top:14px}
+.drawingToggle{display:none}
+@media(max-width:800px){
+ .appBody{display:flex;flex-direction:column}
+ .reviewPanel{order:0;border-bottom:1px solid var(--lineLight)}
+ .drawingPanel{order:1;display:none;border:0;border-top:1px solid var(--line)}
+ .drawingPanel.is-open{display:flex}
+ .drawingToggle{display:inline-flex;align-self:flex-start;align-items:center;min-height:44px;background:transparent;border:0;border-bottom:1px solid var(--ink);padding:7px 0;color:var(--ink);font-weight:700;font-size:14px;text-align:left;margin:0 0 8px}
+ .drawingToggle:hover{color:#374f3e}
+}
+@media(max-width:600px){
+ .reviewPanel{padding:17px 18px 20px}
+ .reviewPanel h3{margin:10px 0 8px;font-size:clamp(25px,7.3vw,29px)}
+ .reviewLead{margin-bottom:10px;line-height:1.5}
+ .evidenceList{margin-bottom:5px}
+ .evidenceList div{padding:9px 0}
+ .reviewMeta{font-size:11px}
+ .appSteps button{min-height:53px}
+ .drawingPanel.is-open{padding:13px}
+ .drawing.is-open{max-height:250px}
+}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
