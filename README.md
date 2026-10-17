@@ -2,27 +2,26 @@
 
 **Architecture, with clarity.**
 
-Planriva explores an Archicad-first workflow for keeping drawings, model context, discrepancies, and human decisions connected. The aim is to make architectural documentation more reviewable, not to automate professional approval.
+Planriva is an Archicad-first **product research concept** exploring how source drawings, model context, discrepancies and architect-owned decisions might stay connected. It does not claim automated professional approval.
 
-**[Public concept website](https://dokarpov.github.io/planriva-site/)**
+## Public experiences
 
-## What you can explore
+- [Concept overview](https://dokarpov.github.io/planriva-site/) — the product thesis and four-step process, with multilingual editorial presentation.
+- [Interactive React concept preview](https://dokarpov.github.io/planriva-site/preview/) — illustrative project context, model markers and proposed review decisions. **Published for evaluation, not a live BIM integration or an accepted production release.**
 
-The published website demonstrates an illustrative revision comparison and multilingual editorial experience (English, Spanish, Catalan). The diagrams and example records use synthetic data.
+The preview uses synthetic project data; graphical comparisons are not verified engineering findings. A successful build does not, by itself, certify interaction quality, accessibility or domain accuracy.
 
-A separate React product-experience rebuild is being validated on the `rebuild/react-v2` branch. Its intended [preview URL](https://dokarpov.github.io/planriva-site/preview/) is **not a production release**; availability and browser QA must be confirmed before it is described as working.
+## The product decision to evaluate
 
-## Product principles
+1. **Source:** a drawing, model reference or revision that a reviewer can inspect.
+2. **Uncertainty:** a possible discrepancy is flagged without pretending a professional conclusion has been established.
+3. **Human authority:** an architect may accept, reject or ask for clarification.
+4. **Traceability:** the decision retains its supporting references.
 
-- **Traceable context:** a proposed issue should link to the source material behind it.
-- **Human decision authority:** an architect reviews and approves consequential changes.
-- **Explicit uncertainty:** demonstrations must distinguish detected differences from verified engineering conclusions.
-- **Private project data:** the public site contains no customer BIM files.
+See the project as a review workflow hypothesis, rather than a promise to auto-generate plans or edit customer BIM models.
 
-## Stage
+## Evidence boundary
 
-**Concept demonstration / early technical validation.** This repository does not establish a production BIM integration, verified accuracy, paying customers, or customer adoption. The revision comparison is illustrative, not an engineering diff.
+**Research / technical validation.** No connected Archicad production environment, measured time savings, real-world accuracy, customer adoption or paying users have been verified by this public release.
 
-## Collaboration
-
-For research conversations, architectural workflow feedback, or pilot interest: [contact](mailto:dokarpov@gmail.com).
+For domain feedback or pilot discussion: [contact](mailto:dokarpov@gmail.com).
