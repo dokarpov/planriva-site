@@ -1,6 +1,10 @@
 name: Build Planriva nested preview
 on:
   workflow_dispatch:
+  push:
+    branches: [rebuild/react-v2]
+    paths:
+      - 'preview-v2/**'
 permissions:
   contents: write
 concurrency:
