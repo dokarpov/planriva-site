@@ -39,7 +39,7 @@ test('published React preview candidate: navigation, evidence review, contrast, 
   function color(str){const match=str.match(/rgba?\(([^)]+)\)/);if(!match)return null;return match[1].split(',').slice(0,3).map(Number)}
   function linear(x){x/=255;return x<=.04045?x/12.92:((x+.055)/1.055)**2.4}
   function luminance(c){return .2126*linear(c[0])+.7152*linear(c[1])+.0722*linear(c[2])}
-  const targets=['.heroGrid p','.contextContent>p','.reviewLead','.reviewPanel h3','.truthLabel','.stageLegend','.choiceTitle'];
+  const targets=['.heroGrid p','.contextContent>p','.reviewLead','.reviewPanel h3','.truthLabel','.stageLegend','.appSteps button.current'];
   return targets.map(selector=>{const node=document.querySelector(selector);const fg=color(getComputedStyle(node).color);let cur=node,bg=null;while(cur){const value=color(getComputedStyle(cur).backgroundColor);if(value&&getComputedStyle(cur).backgroundColor!=='rgba(0, 0, 0, 0)'){bg=value;break}cur=cur.parentElement}bg=bg||[255,255,255];let a=luminance(fg),b=luminance(bg);return {selector,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)}});
  });
  expect(contrast.filter(c=>c.ratio<4.5),'Core text must meet WCAG AA 4.5:1 contrast').toEqual([]);
