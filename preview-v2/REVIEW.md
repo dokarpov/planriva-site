@@ -1,15 +1,23 @@
-# Planriva React preview
+# Planriva — accessible React review candidate
 
-Review URL: https://dokarpov.github.io/planriva-site/preview/
+**Build:** V47, 17 October 2026  
+**Candidate URL (after green GitHub Actions):** https://dokarpov.github.io/planriva-site/preview/  
+**Status:** experimental public preview, not Archicad production integration.
 
-This is a review build, separate from the public concept site. It uses React 18 and Vite; its model and review records are illustrative, not connected to Archicad.
+## What changed
 
-## Acceptance checks
+- Returned the page to a white architectural editorial style with darker body copy and restrained issue highlighting.
+- Converted the site into a mobile-first experience, with a real navigation toggle, readable steps and non-overflowing workspace.
+- A selectable architectural model leads to a separate drawing-based four-step issue review: **Source → Issue → Options → Decision**.
+- Two explicit simulated outcomes; no fictional approval saved, no automatic BIM write.
+- Source-linked narrative and focused disclosure of the research boundary.
 
-The preview workflow builds the React app and runs Chromium at 1440 × 900 and 390 × 844 before publishing. It fails on missing content, uncaught browser exceptions, failed requests or horizontal overflow. Full-page screenshots are retained as GitHub Actions artifacts for 14 days.
+## Release gates
 
-The separate release lab checks the publicly deployed URL. A build passing source tests does not establish that GitHub Pages is serving the latest version. The live URL must be checked before release approval.
+The deployment workflow rebuilds the React app, runs Playwright at desktop (1440×900), tablet (768×1024), phone (390×844), and small phone (320×700), checks stage progression, navigation, no overflow, JS errors and contrast of major text. Deployment happens only after the tests pass, and only inside `/preview/`; the main homepage is unchanged.
 
-## Review focus
+**Do not call this a verified release until the workflow is green and the live URL is checked.** Automated smoke tests are not a substitute for a real architecture-team pilot or an independent visual/a11y review.
 
-Compare the live composition to the approved architectural editorial reference, including typography, whitespace, visual hierarchy, restrained palette, realistic imagery, mobile navigation, model markers and review tabs. No production deployment without approval.
+## Review request
+
+Use the [published preview](https://dokarpov.github.io/planriva-site/preview/) to test the four-step scenario on mobile and desktop. Review architecture plausibility, clarity of source vs model data, first-screen readability and the decision handoff. Feedback should be recorded against a specific screen/step. The product remains synthetic and read-only.
