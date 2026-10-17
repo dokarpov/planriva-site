@@ -26,10 +26,10 @@ function PlanDrawing({step=0}){
  </svg>;
 }
 function App(){
- const [step,setStep]=useState(0),[issue,setIssue]=useState(0),[nav,setNav]=useState(false),[outcome,setOutcome]=useState(''),[openNotes,setOpenNotes]=useState(false);
+ const [step,setStep]=useState(0),[nav,setNav]=useState(false),[outcome,setOutcome]=useState(''),[openNotes,setOpenNotes]=useState(false),[showDrawing,setShowDrawing]=useState(false);
  const s=steps[step];
- const focusReview=()=>document.getElementById('review')?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
- const selectIssue=i=>{setIssue(i);setStep(i===0?1:0);focusReview()};
+ const focusReview=()=>document.getElementById('reviewApp')?.scrollIntoView({behavior:'instant',block:'start'});
+ const selectIssue=i=>{setStep(i===0?1:0);setShowDrawing(false);focusReview()};
  const advance=()=>{if(step===3){setStep(0);setOutcome('');setOpenNotes(false)}else setStep(step+1)};
  return <>
  <a href="#main" className="skip">Skip to content</a>
@@ -46,7 +46,7 @@ function App(){
    <div className="heroIntro wrap">
     <div className="eyebrow"><span className="eyebrowMark"></span> ARCHITECTURE / DOCUMENTATION / REVIEW <span className="edition">CONCEPT 01 — OCT 2026</span></div>
     <div className="heroGrid">
-     <div><h1>Find the discrepancy.<em>Keep the decision.</em></h1><p>Drawings and models don't always agree. Planriva explores a clearer way to review what changed, check the source and decide what happens next.</p><a className="solidLink" href="#review">Review a sample issue <span aria-hidden="true">↗</span></a></div>
+     <div><h1>Find the discrepancy.<em>Keep the decision.</em></h1><p>Drawings and models don't always agree. Planriva explores a clearer way to review what changed, check the source and decide what happens next.</p><a className="solidLink" href="#reviewApp">Review a sample issue <span aria-hidden="true">↗</span></a></div>
      <div className="heroAside"><strong>Built for architectural judgement.</strong><p>Evidence first. Suggestions second. Nothing changes without the architect.</p></div>
     </div>
    </div>
@@ -68,19 +68,19 @@ function App(){
    <div className="wrap">
     <div className="sectionIndex">02 / PRODUCT EXPERIENCE <span>INTERACTIVE / SYNTHETIC DATA</span></div>
     <div className="reviewIntro"><h2>One issue.<br/><em>A traceable decision.</em></h2><p>Try a four-step review. The source material, uncertainty and review outcome remain visible at every stage.</p></div>
-    <div className="reviewApp" aria-label="Interactive architectural issue review demonstration">
+    <div className="reviewApp" id="reviewApp" aria-label="Interactive architectural issue review demonstration">
      <div className="appHeader"><div className="appBrand"><span className="appIcon">p.</span><div><strong>Apartment A</strong><small>Coordination review · A-104</small></div></div><div className="appStatus"><span className="statusDot"></span> HUMAN REVIEW REQUIRED</div></div>
      <div className="appSteps" role="tablist" aria-label="Issue review stages">
       {steps.map((item,i)=><button key={item.tag} role="tab" type="button" aria-selected={step===i} aria-controls="stepPanel" className={step===i?'current':''} onClick={()=>setStep(i)}><span>{String(i+1).padStart(2,'0')}</span>{item.short}</button>)}
      </div>
      <div className="appBody">
-      <div className="drawingPanel">
+      <div className={showDrawing?"drawingPanel is-open":"drawingPanel"} id="referenceDrawing">
        <div className="drawingHeader"><span>REFERENCE DRAWING · REVISION C</span><strong>ZONE 02</strong></div>
        <PlanDrawing step={step}/><div className="drawingFoot"><span>01 FLAGGED PARTITION</span><span>ILLUSTRATIVE SCHEMATIC</span></div>
       </div>
       <div className="reviewPanel" id="stepPanel" role="tabpanel" aria-live="polite">
        <div className="reviewMeta">{s.tag} <span>{s.status}</span></div><h3>{s.title}</h3><p className="reviewLead">{s.summary}</p>
-       <dl className="evidenceList"><div><dt>Reference</dt><dd>{s.detail}</dd></div><div><dt>Observation</dt><dd>{s.finding}</dd></div></dl>
+       <dl className="evidenceList"><div><dt>Reference</dt><dd>{s.detail}</dd></div><div><dt>Observation</dt><dd>{s.finding}</dd></div></dl><button type="button" className="drawingToggle" aria-controls="referenceDrawing" aria-expanded={showDrawing} onClick={()=>setShowDrawing(!showDrawing)}>{showDrawing?"Hide referenced drawing":"View referenced drawing"}</button>
        {step===2 && <div className="optionBlock"><strong>Suggested next step</strong><p>Request confirmation of the controlling drawing revision before any model update.</p></div>}
        {step===3 && <div className="choiceBlock"><p className="choiceTitle">Choose a simulated review outcome</p>
         <div className="choiceButtons"><button type="button" className={outcome==='Clarification requested'?'chosen':''} aria-pressed={outcome==='Clarification requested'} onClick={()=>setOutcome('Clarification requested')}>Request clarification</button><button type="button" className={outcome==='Flagged for later review'?'chosen':''} aria-pressed={outcome==='Flagged for later review'} onClick={()=>setOutcome('Flagged for later review')}>Keep for review</button></div>
