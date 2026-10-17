@@ -126,3 +126,37 @@ html,body{background:#fff;color:#1e2521}
  .closing h2{font-size:clamp(35px,9vw,52px);margin:18px 0 28px}
  .closingCard{padding:26px 20px}
 }
+
+/* Case review: an actual interactive task, not a marketing CTA */
+.caseReview{color:#17231c;font-family:inherit}
+.caseHead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.caseHead small,.casePane small{font-size:10px;letter-spacing:.07em;color:#637168}
+.caseHead h3{font-size:clamp(22px,2.8vw,32px);line-height:1.14;letter-spacing:-.045em;margin:8px 0 12px}
+.caseStatus{font-size:11px;white-space:nowrap;border-bottom:1px solid #a9b5a9;padding:6px 0}
+.caseContext{font-size:13px;line-height:1.65;color:#536056;margin:8px 0 20px}
+.caseSteps{display:flex;border-bottom:1px solid #d7ddd7;gap:16px;overflow:auto}
+.caseSteps button{background:none;border:0;border-bottom:2px solid transparent;color:#647067;padding:11px 0;font:inherit;font-size:12px;white-space:nowrap;cursor:pointer}
+.caseSteps button.selected{border-color:#182b20;color:#182b20;font-weight:700}
+.casePane{padding:22px 0 10px}
+.casePane h4{font-size:20px;letter-spacing:-.03em;margin:0 0 18px}
+.sourcePair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sourcePair>div{padding:14px;background:#f5f6f3;min-width:0}
+.sourcePair strong{display:block;font-size:14px;line-height:1.4;margin:12px 0 7px}
+.sourcePair p,.casePrompt,.casePane>p{font-size:12px;line-height:1.6;color:#526056}
+.casePrompt{margin:18px 0}
+.caseChoices{border:0;padding:0;margin:0 0 18px;display:grid;gap:8px}
+.caseChoices legend,.reasonLabel{font-size:12px;font-weight:700;margin-bottom:10px}
+.caseChoices label{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid #d9ded8;cursor:pointer;font-size:13px}
+.caseChoices input{accent-color:#263e2d}
+.reasonLabel{display:flex;justify-content:space-between}
+.reasonLabel span{font-weight:400;color:#68766b}
+.casePane textarea{width:100%;box-sizing:border-box;background:white;border:1px solid #cdd6ce;padding:13px;font:inherit;font-size:13px;resize:vertical;border-radius:0;color:#17231c}
+.casePane textarea:focus-visible,.caseSteps button:focus-visible,.casePrimary:focus-visible,.caseSecondary:focus-visible{outline:2px solid #2c5339;outline-offset:3px}
+.caseControls{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px;flex-wrap:wrap}
+.caseControls span{font-size:11px;color:#647067}
+.casePrimary{background:#20392a;color:white;border:1px solid #20392a;padding:12px 16px;cursor:pointer;font:inherit;font-size:12px}
+.caseSecondary{background:white;color:#20392a;border:1px solid #bdc7bd;padding:10px 14px;cursor:pointer;font:inherit;font-size:12px}
+.caseError{color:#9b3030!important;font-size:12px!important}
+.savedReason{white-space:pre-wrap;overflow-wrap:anywhere}
+.caseDisclaimer{font-size:10px;color:#67736a;line-height:1.5;margin-top:18px}
+@media(max-width:700px){.caseHead{display:block}.caseStatus{display:inline-block;margin-bottom:8px}.sourcePair{grid-template-columns:1fr}.caseReview{padding:0}.caseSteps{gap:14px}.casePane{padding-top:18px}.casePrimary{min-height:44px}.caseControls .casePrimary{width:100%}}
