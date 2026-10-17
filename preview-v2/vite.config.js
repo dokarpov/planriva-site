@@ -1,8 +1,6 @@
-import { defineConfig } from 'vite';
-
+import {defineConfig} from 'vite';
 export default defineConfig({
-  preview: {
-    host: '0.0.0.0',
-    allowedHosts: ['planriva-v44-staging.up.railway.app'],
-  },
+ base:'/planriva-site/preview/',
+ server:{host:'0.0.0.0'},
+ preview:{host:'0.0.0.0'}
 });
