@@ -236,4 +236,24 @@ h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:var(--display)}
  .appSteps button{font-size:11px}
  .reviewPanel{padding:17px 14px 21px}
 }
+/* Mobile legibility pass: no vital step, marker or source label under 11px. */
+@media(max-width:600px){
+ .eyebrow,.sectionIndex{font-size:12px}
+ .stageTag{font-size:11px}
+ .stageLegend{font-size:12px}
+ .markerOne{left:40%}
+ .markerText{max-width:132px;font-size:11px;padding:9px 10px}
+ .markerText small{font-size:11px}
+ .appSteps button span,.drawingHeader,.drawingFoot,.reviewMeta,.evidenceList dt{font-size:11px}
+ .truthLabel,.siteFooter{font-size:12px}
+ .stageLegend{line-height:1.4}
+ .siteFooter>a{min-height:44px;display:inline-flex;align-items:center}
+ .textDisclosure{min-height:44px}
+}
+@media(max-width:355px){
+ .markerOne{left:35%}
+ .markerText{font-size:11px;max-width:125px}
+ .markerText small{font-size:11px}
+}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
